@@ -19,6 +19,7 @@ body{width:1080px;height:var(--H,1350px);font-family:"Noto Sans CJK KR",sans-ser
 .cream h1 em{font-style:normal;color:#ff5a3c}
 .cream .lead{color:#5b6478;opacity:1}
 .cream .pg{color:#7a8296}
+.brandt{padding-top:380px}
 .cream.brandc:before{top:auto;bottom:-170px;left:-170px}
 .cream .logo{color:#1c273d}.cream .logo b{color:#ff5a3c}
 .top{position:absolute;top:90px;left:0;right:0;display:flex;flex-direction:column;align-items:center;gap:14px}
@@ -56,7 +57,7 @@ th{width:220px;color:#33456d;font-weight:800}
 .paper .logo{color:#26334f}
 '''
 LOGO=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','assets','plug-logo.png')
-def brand(theme):
+def brand(theme,tag=None,sub='',red=False):
     # 상단 중앙: PLUG 로고 & Ptrainer 로고만 (바탕 칩 없음, 두 로고 글자 높이 맞춤)
     import base64
     f=LOGO.replace('plug-logo.png','plug-logo-white.png') if theme=='navy' else LOGO
@@ -66,7 +67,9 @@ def brand(theme):
     return ('<div class="top" style="top:84px"><div style="display:flex;align-items:center;gap:26px">'
             f'<img src="data:image/png;base64,{b64}" style="height:84px;display:block">'
             f'<span style="font-family:FreeSerif,serif;font-style:italic;font-size:80px;line-height:1;font-weight:700;color:{pc};transform:translateY(-4px)">&amp;</span>'
-            f'<span style="font-size:66px;line-height:1;font-weight:900;color:{ink};letter-spacing:-.02em;transform:translateY(-7px)"><b style="color:{pc}">P</b>trainer</span></div></div>')
+            f'<span style="font-size:66px;line-height:1;font-weight:900;color:{ink};letter-spacing:-.02em;transform:translateY(-7px)"><b style="color:{pc}">P</b>trainer</span></div>'
+            +(f'<span class="pill{" red" if red else ""}" style="margin-top:26px">{tag}</span>' if tag else '')
+            +(f'<span class="sub2">{sub}</span>' if tag and sub else '')+'</div>')
 def top(tag,sub,red=False):
     return f'<div class="top"><span class="pill{" red" if red else ""}">{tag}</span>'+(f'<span class="sub2">{sub}</span>' if sub else '')+'</div>'
 def brk(h):
@@ -74,11 +77,11 @@ def brk(h):
     return re.sub(r'(?<=[.?!])\s+(?=[^\s<])','<br>',h)
 def page(c,i,n):
     body=re.sub(r'(<(p|li)( [^>]*)?>)(.*?)(</\2>)',lambda m:m.group(1)+brk(m.group(4))+m.group(5),c['body'])
-    inner=(brand(c['theme']) if c.get('brand') else top(c['tag'],c.get('sub',''),c.get('red',False)))+body
+    inner=(brand(c['theme'],c.get('tag') if c.get('brand')=='cover' else None,c.get('sub',''),c.get('red',False)) if c.get('brand') else top(c['tag'],c.get('sub',''),c.get('red',False)))+body
     mark='' if c.get('brand') else '<div class="logo"><b>P</b>trainer</div>'
-    return f'<html><head><meta charset="utf-8"><style>{CSS}:root{{--H:{H}px}}{REEL if H>1350 else ''}</style></head><body><div class="c {c["theme"]}{' brandc' if c.get('brand') else ''}">{inner}<div class="pg">{i} / {n}</div>{mark}</div></body></html>'
+    return f'<html><head><meta charset="utf-8"><style>{CSS}:root{{--H:{H}px}}{REEL if H>1350 else ''}</style></head><body><div class="c {c["theme"]}{' brandc' if c.get('brand') else ''}{' brandt' if c.get('brand')=='cover' else ''}">{inner}<div class="pg">{i} / {n}</div>{mark}</div></body></html>'
 # 릴스 화면 위아래는 인스타 버튼에 가리므로 안전 영역 안으로 당긴다
-REEL='.top{top:250px!important}.pg{bottom:330px}.logo{bottom:326px}.c{padding:420px 88px 400px}'
+REEL='.top{top:250px!important}.c.brandt{padding-top:560px}.pg{bottom:330px}.logo{bottom:326px}.c{padding:420px 88px 400px}'
 H=int(os.environ.get('CARD_H','1350'))  # 릴스·스토리용은 CARD_H=1920
 def main(spec,out):
     s=json.load(open(spec,encoding='utf8'));os.makedirs(out,exist_ok=True)
