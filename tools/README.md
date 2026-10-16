@@ -37,3 +37,7 @@
 ```
 python3 tools/render_cards.py specs/2026-10-16-news.json cards/2026-10-16/
 ```
+
+## OX 퀴즈 1장 (specs/example-quiz.json)
+- 문제 h1 아래에 파란 O, 빨간 X 원을 나란히 넣는다. example-quiz.json 1장 body의 `<div style="display:flex...">` 부분을 그대로 복사해서 쓴다.
+- 1장에는 정답을 쓰지 않는다. 정답과 설명은 캡션(specs/example-quiz-caption.txt 형식).

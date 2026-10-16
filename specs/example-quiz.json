@@ -1,14 +1,29 @@
 {
  "name": "quiz-sample",
  "cards": [
-  {"theme":"navy","tag":"발달 OX 퀴즈","sub":"말과 소통","red":false,
-   "body":"<h1>엄마는 한국어,<br>아빠는 영어로 말하면<br>아이 말이 <em>늦어진다</em></h1><p class=\"lead\">O일까요, X일까요?</p>",
-   "text":"[발달 OX 퀴즈 · 말과 소통]\n엄마는 한국어, 아빠는 영어로 말하면 아이 말이 늦어진다\nO일까요, X일까요?"},
-  {"theme":"paper","tag":"이런 걱정, 해 보셨죠?","sub":"말과 소통","red":false,
-   "body":"<h2>또래보다 단어가<br><em>적어 보여서</em> 걱정돼요</h2><div class=\"box\"><p>한국어로 세어 보면<br>아는 단어가 또래보다 적고,<br>한 문장에 두 말을 섞어 쓰기도 해요.</p><p>‘한 언어만 쓸 걸 그랬나’<br>고민되는 부모님이 많아요.</p></div>",
-   "text":"[이런 걱정, 해 보셨죠? · 말과 소통]\n또래보다 단어가 적어 보여서 걱정돼요\n한국어로 세어 보면 아는 단어가 또래보다 적고, 한 문장에 두 말을 섞어 쓰기도 해요. ‘한 언어만 쓸 걸 그랬나’ 고민되는 부모님이 많아요."},
-  {"theme":"navy","tag":"P trainer","sub":"부모 발달 가이드","red":false,
-   "body":"<h1>댓글로 <em>O, X</em>를<br>먼저 남겨 보세요</h1><div class=\"cta\">정답과 설명은<br>아래 캡션에 있어요</div><p class=\"note\">우리 아이 발달이 궁금하면 프로필 링크의 발달 체크리스트로 확인해 보세요.</p>",
-   "text":"[P trainer · 부모 발달 가이드]\n댓글로 O, X를 먼저 남겨 보세요\n정답과 설명은 아래 캡션에 있어요\n우리 아이 발달이 궁금하면 프로필 링크의 발달 체크리스트로 확인해 보세요."}
+  {
+   "theme": "navy",
+   "tag": "발달 OX 퀴즈",
+   "sub": "말과 소통",
+   "red": false,
+   "body": "<h1>엄마는 한국어,<br>아빠는 영어로 말하면<br>아이 말이 <em>늦어진다</em></h1><div style=\"display:flex;gap:56px;justify-content:center;margin-top:64px\"><div style=\"width:230px;height:230px;border-radius:50%;border:16px solid #4dabf7;display:flex;align-items:center;justify-content:center;font-size:150px;font-weight:900;color:#4dabf7;line-height:1\">O</div><div style=\"width:230px;height:230px;border-radius:50%;border:16px solid #ff6b6b;display:flex;align-items:center;justify-content:center;font-size:150px;font-weight:900;color:#ff6b6b;line-height:1\">X</div></div>",
+   "text": "[발달 OX 퀴즈 · 말과 소통]\n엄마는 한국어, 아빠는 영어로 말하면 아이 말이 늦어진다\nO일까요, X일까요?"
+  },
+  {
+   "theme": "paper",
+   "tag": "이런 걱정, 해 보셨죠?",
+   "sub": "말과 소통",
+   "red": false,
+   "body": "<h2>또래보다 단어가<br><em>적어 보여서</em> 걱정돼요</h2><div class=\"box\"><p>한국어로 세어 보면<br>아는 단어가 또래보다 적고,<br>한 문장에 두 말을 섞어 쓰기도 해요.</p><p>‘한 언어만 쓸 걸 그랬나’<br>고민되는 부모님이 많아요.</p></div>",
+   "text": "[이런 걱정, 해 보셨죠? · 말과 소통]\n또래보다 단어가 적어 보여서 걱정돼요\n한국어로 세어 보면 아는 단어가 또래보다 적고, 한 문장에 두 말을 섞어 쓰기도 해요. ‘한 언어만 쓸 걸 그랬나’ 고민되는 부모님이 많아요."
+  },
+  {
+   "theme": "navy",
+   "tag": "P trainer",
+   "sub": "부모 발달 가이드",
+   "red": false,
+   "body": "<h1>댓글로 <em>O, X</em>를<br>먼저 남겨 보세요</h1><div class=\"cta\">정답과 설명은<br>아래 캡션에 있어요</div><p class=\"note\">우리 아이 발달이 궁금하면 프로필 링크의 발달 체크리스트로 확인해 보세요.</p>",
+   "text": "[P trainer · 부모 발달 가이드]\n댓글로 O, X를 먼저 남겨 보세요\n정답과 설명은 아래 캡션에 있어요\n우리 아이 발달이 궁금하면 프로필 링크의 발달 체크리스트로 확인해 보세요."
+  }
  ]
 }
