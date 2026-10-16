@@ -66,7 +66,7 @@ def brand(theme,tag=None,sub='',red=False):
     pc={'cream':'#ff5a3c'}.get(theme,'#f3c64d')
     return ('<div class="top" style="top:84px"><div style="display:flex;align-items:center;gap:26px">'
             f'<img src="data:image/png;base64,{b64}" style="height:84px;display:block">'
-            f'<span style="font-family:FreeSerif,serif;font-style:italic;font-size:80px;line-height:1;font-weight:700;color:{pc};transform:translateY(-4px)">&amp;</span>'
+            f'<span style="font-family:FreeSerif,serif;font-style:italic;font-size:80px;line-height:1;font-weight:700;color:{ink};transform:translateY(-4px)">&amp;</span>'
             f'<span style="font-size:66px;line-height:1;font-weight:900;color:{ink};letter-spacing:-.02em;transform:translateY(-7px)"><b style="color:{pc}">P</b>trainer</span></div>'
             +(f'<span class="pill{" red" if red else ""}" style="margin-top:26px">{tag}</span>' if tag else '')
             +(f'<span class="sub2">{sub}</span>' if tag and sub else '')+'</div>')
