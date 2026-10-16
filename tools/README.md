@@ -53,7 +53,9 @@ python3 tools/render_cards.py specs/2026-10-16-news.json cards/2026-10-16/
 - 영상: `ffmpeg -framerate 1/3 -i <이름>-reel-%d.png -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 -vf "fps=30,format=yuv420p" -c:v libx264 -preset slow -tune stillimage -crf 16 -c:a aac -b:a 128k -shortest -movflags +faststart <이름>-reel.mp4`
 
 ## 브랜드 로고 (PLUG & Ptrainer)
-- 마지막 장: `"brand": true` → 상단 중앙에 `PLUG 로고 & Ptrainer` (칩 없음, 높이 맞춤, &는 글자색(크림·흰 바탕은 검정, 남색 바탕은 흰색) 세리프 이탤릭).
+- 마지막 장: `"brand": true` → 상단 중앙에 `PLUG 로고 & Ptrainer` (칩 없음, 높이 맞춤, Ptrainer는 PLUG와 비슷한 Poppins Bold 둥근 획·P는 PLUG 파랑, &는 글자색(크림·흰 바탕은 검정, 남색 바탕은 흰색) 세리프 이탤릭).
 - 표지(1장): `"brand": "cover"` → 같은 로고 아래에 tag 칩·sub를 그대로 둔다(본문은 자동으로 아래로 내려감).
 - **첫 페이지(표지)와 마지막 페이지에만** 넣는다. 중간 장은 기존 tag 칩. 이때 우측 하단 Ptrainer 표시는 숨김.
 - 크림 표지는 로고와 겹치지 않게 노란 원을 왼쪽 아래로 옮기고, 태그 칩·제목을 로고 아래로 내린다(예: tools/make_cover_props.py).
+
+- 우측 하단 Ptrainer 표시는 모든 장에서 쓰지 않는다. 쪽번호는 모든 장 가운데 아래.

@@ -47,7 +47,7 @@ def mk(H):
 <div class="a" style="left:330px;top:1000px">{book}</div>
 <div class="a" style="left:610px;top:800px">{cup}</div>
 <div class="a" style="left:820px;top:860px">{mirror}</div>
-<div class="a" style="left:88px;bottom:56px;font-size:30px;font-weight:600;color:#7a8296">1 / 5</div>
+<div class="a" style="left:0;right:0;bottom:{56 if H==1350 else 45}px;text-align:center;font-size:36px;font-weight:800;color:#7a8296">1 / 5</div>
 '''+RC.brand('cream').replace('class="top" style="top:84px"','class="a" style="left:0;right:0;top:70px;display:flex;justify-content:center"')+f'''
 </div></div></body></html>'''
 import sys

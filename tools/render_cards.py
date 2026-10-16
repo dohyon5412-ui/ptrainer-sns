@@ -58,16 +58,17 @@ th{width:220px;color:#33456d;font-weight:800}
 '''
 LOGO=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','assets','plug-logo.png')
 def brand(theme,tag=None,sub='',red=False):
-    # 상단 중앙: PLUG 로고 & Ptrainer 로고만 (바탕 칩 없음, 두 로고 글자 높이 맞춤)
+    # 상단 중앙: PLUG 로고 & Ptrainer(PLUG와 비슷한 Poppins Bold 둥근 획, P는 PLUG 파랑) (바탕 칩 없음, 두 로고 글자 높이 맞춤)
     import base64
     f=LOGO.replace('plug-logo.png','plug-logo-white.png') if theme=='navy' else LOGO
     b64=base64.b64encode(open(f,'rb').read()).decode()
     ink={'navy':'#fff','paper':'#26334f','cream':'#1c273d'}.get(theme,'#1c273d')
-    pc={'cream':'#ff5a3c'}.get(theme,'#f3c64d')
+    pc='#fff' if theme=='navy' else '#1947ba'  # Ptrainer의 P = PLUG 로고와 같은 색
     return ('<div class="top" style="top:84px"><div style="display:flex;align-items:center;gap:26px">'
             f'<img src="data:image/png;base64,{b64}" style="height:84px;display:block">'
             f'<span style="font-family:FreeSerif,serif;font-style:italic;font-size:80px;line-height:1;font-weight:700;color:{ink};transform:translateY(-4px)">&amp;</span>'
-            f'<span style="font-size:66px;line-height:1;font-weight:900;color:{ink};letter-spacing:-.02em;transform:translateY(-7px)"><b style="color:{pc}">P</b>trainer</span></div>'
+            f'<svg width="348" height="84" viewBox="0 0 348 84" style="overflow:visible;display:block"><text x="0" y="67" font-family="Poppins" font-weight="700" font-size="80" letter-spacing="2" stroke-width="3" stroke-linejoin="round" paint-order="stroke">'
+            f'<tspan fill="{pc}" stroke="{pc}">P</tspan><tspan fill="{ink}" stroke="{ink}">trainer</tspan></text></svg></div>'
             +(f'<span class="pill{" red" if red else ""}" style="margin-top:26px">{tag}</span>' if tag else '')
             +(f'<span class="sub2">{sub}</span>' if tag and sub else '')+'</div>')
 def top(tag,sub,red=False):
@@ -78,7 +79,7 @@ def brk(h):
 def page(c,i,n):
     body=re.sub(r'(<(p|li)( [^>]*)?>)(.*?)(</\2>)',lambda m:m.group(1)+brk(m.group(4))+m.group(5),c['body'])
     inner=(brand(c['theme'],c.get('tag') if c.get('brand')=='cover' else None,c.get('sub',''),c.get('red',False)) if c.get('brand') else top(c['tag'],c.get('sub',''),c.get('red',False)))+body
-    mark='' if c.get('brand') else '<div class="logo"><b>P</b>trainer</div>'
+    mark=''  # 우측 하단 Ptrainer 표시는 쓰지 않음(2026-10-16)
     return f'<html><head><meta charset="utf-8"><style>{CSS}:root{{--H:{H}px}}{REEL if H>1350 else ''}</style></head><body><div class="c {c["theme"]}{' brandc' if c.get('brand') else ''}{' brandt' if c.get('brand')=='cover' else ''}">{inner}<div class="pg">{i} / {n}</div>{mark}</div></body></html>'
 # 릴스 화면 위아래는 인스타 버튼에 가리므로 안전 영역 안으로 당긴다
 REEL='.top{top:250px!important}.c.brandt{padding-top:560px}.pg{bottom:330px}.logo{bottom:326px}.c{padding:420px 88px 400px}'
