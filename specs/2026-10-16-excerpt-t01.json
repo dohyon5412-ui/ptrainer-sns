@@ -34,11 +34,11 @@
    "text": "[꼭 확인 · 상담 신호]\n이럴 땐 기다리지 말고 한번 확인해 보세요\n· 16개월이 넘었는데 의미 있는 단어가 하나도 없어요.\n· 두 돌이 지났는데 두 단어 문장이 없어요.\n· 이름을 불러도 잘 돌아보지 않아요.\n· 할 줄 알던 말을 갑자기 하지 않아요."
   },
   {
-   "theme": "navy",
+   "theme": "cream",
    "tag": "PLUG & P trainer",
    "sub": "",
    "red": false,
-   "body": "<h1>말은 <em>맨 꼭대기</em>예요</h1><p class=\"lead\">아래 칸부터 차곡차곡 채워야<br>말이 트이기 쉬워요</p><div style=\"margin-top:46px\"><div style=\"width:300px;margin:0 auto 14px;background:#f3c64d;color:#1c273d;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800\">말하기</div><div style=\"width:520px;margin:0 auto 14px;background:rgba(243,198,77,.55);color:#1c273d;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800\">흉내 내기 · 알아듣기</div><div style=\"width:700px;margin:0 auto 14px;background:rgba(255,255,255,.22);color:#fff;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800\">눈 맞추기 · 주고받기</div><div style=\"width:860px;margin:0 auto 14px;background:rgba(255,255,255,.12);color:#fff;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800\">듣기 · 보기 · 몸 쓰기</div></div>",
+   "body": "<h1>말은 <em>맨 꼭대기</em>예요</h1><p class=\"lead\">아래 칸부터 차곡차곡 채워야<br>말이 트이기 쉬워요</p><div style=\"margin-top:46px\"><div style=\"width:300px;margin:0 auto 14px;background:#1c273d;color:#ffd84d;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800;\">말하기</div><div style=\"width:520px;margin:0 auto 14px;background:#ff8a6b;color:#fff;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800;\">흉내 내기 · 알아듣기</div><div style=\"width:700px;margin:0 auto 14px;background:#ffd84d;color:#1c273d;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800;\">눈 맞추기 · 주고받기</div><div style=\"width:860px;margin:0 auto 14px;background:#ffffff;color:#1c273d;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800;box-shadow:0 0 0 4px #1c273d inset\">듣기 · 보기 · 몸 쓰기</div></div>",
    "text": "[PLUG & P trainer]\n말은 맨 꼭대기예요\n아래 칸부터 차곡차곡 채워야 말이 트이기 쉬워요\n(아래부터) 듣기·보기·몸 쓰기 → 눈 맞추기·주고받기 → 흉내 내기·알아듣기 → 말하기",
    "brand": true
   }
