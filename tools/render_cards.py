@@ -57,14 +57,15 @@ th{width:220px;color:#33456d;font-weight:800}
 '''
 LOGO=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','assets','plug-logo.png')
 def brand(theme):
-    # 상단 중앙: PLUG 로고 + Ptrainer 로고만 (바탕 칩 없음, 두 로고 글자 높이 맞춤)
+    # 상단 중앙: PLUG 로고 & Ptrainer 로고만 (바탕 칩 없음, 두 로고 글자 높이 맞춤)
     import base64
     f=LOGO.replace('plug-logo.png','plug-logo-white.png') if theme=='navy' else LOGO
     b64=base64.b64encode(open(f,'rb').read()).decode()
     ink={'navy':'#fff','paper':'#26334f','cream':'#1c273d'}.get(theme,'#1c273d')
     pc={'cream':'#ff5a3c'}.get(theme,'#f3c64d')
-    return ('<div class="top" style="top:84px"><div style="display:flex;align-items:center;gap:34px">'
+    return ('<div class="top" style="top:84px"><div style="display:flex;align-items:center;gap:26px">'
             f'<img src="data:image/png;base64,{b64}" style="height:84px;display:block">'
+            f'<span style="font-family:FreeSerif,serif;font-style:italic;font-size:80px;line-height:1;font-weight:700;color:{pc};transform:translateY(-4px)">&amp;</span>'
             f'<span style="font-size:66px;line-height:1;font-weight:900;color:{ink};letter-spacing:-.02em;transform:translateY(-7px)"><b style="color:{pc}">P</b>trainer</span></div></div>')
 def top(tag,sub,red=False):
     return f'<div class="top"><span class="pill{" red" if red else ""}">{tag}</span>'+(f'<span class="sub2">{sub}</span>' if sub else '')+'</div>'

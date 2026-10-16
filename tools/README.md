@@ -51,3 +51,8 @@ python3 tools/render_cards.py specs/2026-10-16-news.json cards/2026-10-16/
 ## 릴스·스토리 크기(1080x1920)
 - `CARD_H=1920 python3 tools/render_cards.py <spec> <폴더>` 로 같은 사양을 세로형으로 다시 렌더링한다. 위아래 인스타 버튼에 가리지 않게 안전 영역 안으로 배치된다.
 - 영상: `ffmpeg -framerate 1/3 -i <이름>-reel-%d.png -f lavfi -i anullsrc=channel_layout=stereo:sample_rate=48000 -vf "fps=30,format=yuv420p" -c:v libx264 -preset slow -tune stillimage -crf 16 -c:a aac -b:a 128k -shortest -movflags +faststart <이름>-reel.mp4`
+
+## 브랜드 로고 (PLUG & Ptrainer)
+- 카드 사양에 `"brand": true` → 상단 중앙에 `PLUG 로고 & Ptrainer` (칩 없음, 높이 맞춤, &는 포인트색 세리프 이탤릭).
+- **첫 페이지(표지)와 마지막 페이지에만** 넣는다. 이때 우측 하단 Ptrainer 표시는 숨김.
+- 크림 표지는 로고와 겹치지 않게 노란 원을 왼쪽 아래로 옮기고, 태그 칩·제목을 로고 아래로 내린다(예: tools/make_cover_props.py).
