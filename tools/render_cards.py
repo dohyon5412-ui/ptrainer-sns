@@ -46,6 +46,15 @@ th{width:220px;color:#33456d;font-weight:800}
 .logo b{color:#f3c64d;font-size:46px}
 .paper .logo{color:#26334f}
 '''
+LOGO=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','assets','plug-logo.png')
+def brand():
+    # 상단 중앙: PLUG 로고 & Ptrainer (흰 바탕 둥근 칩)
+    import base64
+    b64=base64.b64encode(open(LOGO,'rb').read()).decode()
+    return ('<div class="top"><div style="display:flex;align-items:center;gap:22px;background:#fff;border-radius:999px;padding:16px 38px">'
+            f'<img src="data:image/png;base64,{b64}" style="height:64px;display:block">'
+            '<span style="font-size:40px;font-weight:800;color:#9aa3b5">&amp;</span>'
+            '<span style="font-size:48px;font-weight:900;color:#26334f;letter-spacing:-.01em"><b style="color:#f3c64d;font-size:54px">P</b>trainer</span></div></div>')
 def top(tag,sub,red=False):
     return f'<div class="top"><span class="pill{" red" if red else ""}">{tag}</span>'+(f'<span class="sub2">{sub}</span>' if sub else '')+'</div>'
 def brk(h):
@@ -53,8 +62,9 @@ def brk(h):
     return re.sub(r'(?<=[.?!])\s+(?=[^\s<])','<br>',h)
 def page(c,i,n):
     body=re.sub(r'(<(p|li)( [^>]*)?>)(.*?)(</\2>)',lambda m:m.group(1)+brk(m.group(4))+m.group(5),c['body'])
-    inner=top(c['tag'],c.get('sub',''),c.get('red',False))+body
-    return f'<html><head><meta charset="utf-8"><style>{CSS}</style></head><body><div class="c {c["theme"]}">{inner}<div class="pg">{i} / {n}</div><div class="logo"><b>P</b>trainer</div></div></body></html>'
+    inner=(brand() if c.get('brand') else top(c['tag'],c.get('sub',''),c.get('red',False)))+body
+    mark='' if c.get('brand') else '<div class="logo"><b>P</b>trainer</div>'
+    return f'<html><head><meta charset="utf-8"><style>{CSS}</style></head><body><div class="c {c["theme"]}">{inner}<div class="pg">{i} / {n}</div>{mark}</div></body></html>'
 def main(spec,out):
     s=json.load(open(spec,encoding='utf8'));os.makedirs(out,exist_ok=True)
     name=s.get('name','card');files=[]

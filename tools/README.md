@@ -41,3 +41,6 @@ python3 tools/render_cards.py specs/2026-10-16-news.json cards/2026-10-16/
 ## OX 퀴즈 1장 (specs/example-quiz.json)
 - 문제 h1 아래에 파란 O, 빨간 X 원을 나란히 넣는다. example-quiz.json 1장 body의 `<div style="display:flex...">` 부분을 그대로 복사해서 쓴다.
 - 1장에는 정답을 쓰지 않는다. 3장은 댓글 유도용: "궁금한 내용이 있으면 댓글로 알려 주세요" + "O, X 답도 함께 남겨 주세요" + note "정답과 설명은 아래 캡션에 있어요." 정답과 설명은 캡션(specs/example-quiz-caption.txt 형식).
+
+## 브랜드 칩 (발췌 5장 등)
+- 카드에 `"brand": true`를 넣으면 맨 위 노란 태그 대신 상단 중앙에 흰 칩으로 "PLUG 로고 & Ptrainer"가 들어가고, 우측 하단 Ptrainer 표시는 빠진다. 로고 파일은 assets/plug-logo.png.

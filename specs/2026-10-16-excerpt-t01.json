@@ -35,11 +35,12 @@
   },
   {
    "theme": "navy",
-   "tag": "P trainer",
-   "sub": "부모 발달 가이드",
+   "tag": "PLUG & P trainer",
+   "sub": "",
    "red": false,
    "body": "<h1>말은 <em>맨 꼭대기</em>예요</h1><p class=\"lead\">아래 칸부터 차곡차곡 채워야<br>말이 트이기 쉬워요</p><div style=\"margin-top:46px\"><div style=\"width:300px;margin:0 auto 14px;background:#f3c64d;color:#1c273d;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800\">말하기</div><div style=\"width:520px;margin:0 auto 14px;background:rgba(243,198,77,.55);color:#1c273d;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800\">흉내 내기 · 알아듣기</div><div style=\"width:700px;margin:0 auto 14px;background:rgba(255,255,255,.22);color:#fff;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800\">눈 맞추기 · 주고받기</div><div style=\"width:860px;margin:0 auto 14px;background:rgba(255,255,255,.12);color:#fff;border-radius:18px;padding:18px 0;font-size:36px;font-weight:800\">듣기 · 보기 · 몸 쓰기</div></div>",
-   "text": "[P trainer · 부모 발달 가이드]\n말은 맨 꼭대기예요\n아래 칸부터 차곡차곡 채워야 말이 트이기 쉬워요\n(아래부터) 듣기·보기·몸 쓰기 → 눈 맞추기·주고받기 → 흉내 내기·알아듣기 → 말하기"
+   "text": "[PLUG & P trainer]\n말은 맨 꼭대기예요\n아래 칸부터 차곡차곡 채워야 말이 트이기 쉬워요\n(아래부터) 듣기·보기·몸 쓰기 → 눈 맞추기·주고받기 → 흉내 내기·알아듣기 → 말하기",
+   "brand": true
   }
  ]
 }
